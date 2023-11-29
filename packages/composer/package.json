@@ -45,6 +45,7 @@
     "@platformatic/generators": "workspace:*",
     "@platformatic/service": "workspace:*",
     "@platformatic/swagger-ui-theme": "workspace:*",
+    "@platformatic/scalar-theme": "workspace:*",
     "@platformatic/telemetry": "workspace:*",
     "ajv": "^8.12.0",
     "commist": "^3.2.0",

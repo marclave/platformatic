@@ -4,7 +4,8 @@ const assert = require('node:assert/strict')
 const { request, setGlobalDispatcher, Agent } = require('undici')
 const fastify = require('fastify')
 const Swagger = require('@fastify/swagger')
-const SwaggerUI = require('@fastify/swagger-ui')
+// const SwaggerUI = require('@fastify/swagger-ui')
+const ApiReference = require('@scalar/fastify-api-reference')
 
 const { buildServer } = require('..')
 
@@ -30,7 +31,7 @@ async function createBasicService (t) {
       }
     }
   })
-  await app.register(SwaggerUI)
+  await app.register(ApiReference)
 
   app.get('/text', async () => {
     return 'Some text'
@@ -98,7 +99,7 @@ async function createOpenApiService (t, entitiesNames = []) {
       }
     }
   })
-  await app.register(SwaggerUI)
+  await app.register(ApiReference)
 
   app.decorate('getOpenApiSchema', async () => {
     const { body } = await app.inject({
